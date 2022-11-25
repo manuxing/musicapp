@@ -6,17 +6,17 @@ import "./index.css"
 function List({props:{open, setOpen, song, setSong}}) {
     let music = useContext(musicContext);
   return (
-    <div className="list">
+    <div className={`list ${open ? "show" : ""}`}>
       <div className="header">
           <Button text={"queue_music"} />
-        <Button text={"close"} />
+        <Button text={"close"} action={setOpen()} value={false} /> 
       </div>
 
       <ul>
         {music.map((tem, i) => {
           return (
-            <li key={tem.id}>
-              <div className="row">
+            <li key={tem.id} onClick={()=> setSong(i)}>
+              <div className={`${song === i ? 'playing' : 'row'}`}>
                 <p>{tem.title}</p>
               </div>
             </li>
