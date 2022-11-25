@@ -5,24 +5,42 @@ import "./index.css"
 
 function List({props:{open, setOpen, song, setSong}}) {
     let music = useContext(musicContext);
+    function handleOpen(){
+      setOpen(!open);
+    }
   return (
-    <div className={`list ${open ? "show" : ""}`}>
-      <div className="header">
-          <Button text={"queue_music"} />
-        <Button text={"close"} action={setOpen()} value={false} /> 
-      </div>
-
-      <ul>
-        {music.map((tem, i) => {
-          return (
-            <li key={tem.id} onClick={()=> setSong(i)}>
-              <div className={`${song === i ? 'playing' : 'row'}`}>
-                <p>{tem.title}</p>
+    <div>
+        <div className="navcontainer">
+            <div className="nav">
+              <div className="div" onClick={handleOpen}>
+                <Button text={"expand_more"} />
               </div>
-            </li>
-          );
-        })}
-      </ul>
+              <span>
+                Now Playing {song + 1}/{music.length}
+              </span>
+              <Button text={"queue_music"} />
+            </div>
+          </div>
+    {open === true ?
+        <div className={`list`}>
+          <div className="header">
+              <Button text={"queue_music"} />
+              <div className="div" onClick={handleOpen} >
+              <Button text={"close"} /> 
+              </div>
+          </div>
+          <ul>
+            {music.map((tem, i) => {
+              return (
+                <li key={tem.id} onClick={()=> setSong(i)}>
+                  <div className={`${song === i ? 'playing' : 'row'}`}>
+                    <p>{tem.title}</p>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </div> :<></>}
     </div>
   );
 }

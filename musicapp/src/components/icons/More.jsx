@@ -1,11 +1,9 @@
 import React from 'react'
 
-function Button({text, action, value}) {
-  action = action !== undefined ? action : console.log()
-  value =  value ? value : 0
+function Button({text}) {
   return (
-        <i onClick={()=>action(value)} class="material-icons">
-            {text}
+        <i className="material-icons">
+            {text && text}
         </i>
   )
 }

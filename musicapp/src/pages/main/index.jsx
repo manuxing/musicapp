@@ -8,7 +8,7 @@ import List from '../../components/List';
 function MainPage() {
 
   const [song, setSong] = useState(0);
-  const [open, setOpen] = useState(0);
+  const [open, setOpen] = useState(false);
 
   return (
     <div className='container'>
