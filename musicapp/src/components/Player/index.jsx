@@ -9,42 +9,56 @@ function Player({props: {song, setSong}}) {
   
   return (
     <div className="card">
-      Player
-      <div className="nav">
-        <Button text={"expand_more"} />
-        <span>
-          Now Playing {song + 1}/{music.length}
-        </span>
-        <Button text={"queue_music"} />
-      </div>
-      <div className="img">
-        <img src={music[song].thumbnail} alt="img" />
-      </div>
-      <div className="details">
-        <p className="title">{music[song].title}</p>
-        <p className="artist">{music[song].artist}</p>
-      </div>
-      <div className="progress">
-        <input type="range" min={0} max={100} />
-      </div>
-      <div className="timer">
-        <span>00:00</span>
-        <span>00:34</span>
-      </div>
-      <div className="controls">
-        <Button text={"repeat"} />
-
-        <Button text={"skip_previous"} id={"prev"} />
-        <div className="play">
-          <Button text={"play_arrow"} />
+      <div className="detcontainer">
+        <div className="img">
+          <img src={music[song].thumbnail} alt="img" />
         </div>
+        <div className="details">
+          <p className="title">{music[song].title}</p>
+          <div className="artist">
+            <p >{music[song].artist}</p>
+          </div>
+        </div>
+      </div>
+      <div className="bar">
+        <div className="bartop">
+          <div className="timer">
+            <p>00:00</p>
+          </div>
+          <div className="progress">
+            <input type="range" min={0} max={100} />
+          </div>
+          <div>
+            <p>00:34</p>
+          </div>
+        </div>
+        <div className="controls">
+          <Button text={"repeat"} />
 
-        <Button text={"skip_next"} id={"next"}/>
+          <Button text={"skip_previous"} id={"prev"} />
+          <div className="play">
+            <Button text={"play_arrow"} />
+          </div>
 
-        <div className="volume">
+          <Button text={"skip_next"} id={"next"}/>
+
           <Button text={"volume_up"}/>
-        </div>
 
+
+        </div>
+      </div>
+          {/* <div className="volume">
+            <Button text={"volume_up"}/>
+            <input type="range" min={0} max={100} />
+          </div> */}
+      <div className="navcontainer">
+        <div className="nav">
+          <Button text={"expand_more"} />
+          <span>
+            Now Playing {song + 1}/{music.length}
+          </span>
+          <Button text={"queue_music"} />
+        </div>
       </div>
       <audio src={music[song].src} controls></audio>
     </div>
