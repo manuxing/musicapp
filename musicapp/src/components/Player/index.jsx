@@ -8,7 +8,7 @@ import DetallePlayer from './DetallePlayer';
 import Volume from './Volume';
 import { playerContext } from '../../pages/main/contexts/playerContext';
 import "./index.css"
-import { LoadStart } from './playerActions';
+import { End, loadStart, nextPrev, Play, randomNumber, Repeat } from './playerActions';
 
 function Player({props: {song, setSong}}) {
 
@@ -22,76 +22,39 @@ function Player({props: {song, setSong}}) {
   const audio = useRef();
 
   const handleLoadStart = (e)=> {
-    //setDuration
     loadStart(e, setDuration);
   }
-}
 
-  function handleTimeUpdate(audion, action){
+  function handleTimeUpdate(){
     const currentTime = audio.current.currentTime;
     setCtime(currentTime);
   }
 
-  function handlePlay(play, audio, action){
-    if(play){
-      audio.current.pause();
-      setPlay(false);
-    }else{
-      audio.current.play();
-      setPlay(true);
-    }
+  function handlePlay(){
+    Play(play, audio, setPlay);
   }
 
-  function handleNextPrev(n, action, music){
-    setSong(v =>{
-      if(n > 0){
-        return v + n > music.length - 1 ? 0 :v + n;
-      }
-      return v + n < 0 ? music.length - 1: v+n 
-    })
+  function handleNextPrev(n){
+    nextPrev(setSong, n, music)
   }
 
-  function handleRepeat(action){
-    setRepeat(val=>{
-      switch(val){
-        case "repeat":
-          return 'repeat_one';
-
-        case "repeat_one":
-          return 'shuffle';
-
-        default:
-          return 'repeat'
-      }
-    })
+  function handleRepeat(){
+    Repeat(setRepeat);
   }
 
-  function changeCurrentTime(e, audio, action){
+  function changeCurrentTime(e){
     const current = Number(e.target.value);
     audio.current.currentTime = current;
     setCtime(current)
   }
 
-  function endedAudio(audio, action, action2){
-    switch(repeat){
-      case 'repeat_one':
-        return audio.current.play();
-      case 'shuffle':
-        return handleShuffle();
-        default:
-          return handleNextPrev(1);
-    }
+  function endedAudio(){
+    End(repeat, audio, handleShuffle, handleNextPrev);
   }
 
-  function handleShuffle(action, cb){
-    const num = randomNumber();
+  const handleShuffle = ()=>{
+    const num = randomNumber(music, song);
     setSong(num);
-  }
-
-  function randomNumber(music, song){
-    const number = Math.floor(Math.random() * (music.length-1))
-    if(number === song)return randomNumber();
-    return number
   }
   
   useEffect(()=>{

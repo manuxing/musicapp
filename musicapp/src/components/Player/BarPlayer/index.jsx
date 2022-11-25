@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
-import Button from "../../components/icons/More"
-import { playerContext } from '../../pages/main/contexts/playerContext';
+import Button from "../../icons/More"
+import { playerContext } from '../../../pages/main/contexts/playerContext';
 
 function BarPlayer() {
 
@@ -58,4 +58,4 @@ function BarPlayer() {
   );
 }
 
-export default BarPlayer
+export default React.memo(BarPlayer);

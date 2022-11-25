@@ -20,4 +20,4 @@ function DetallePlayer() {
   );
 }
 
-export default DetallePlayer;
+export default React.memo(DetallePlayer);
