@@ -1,0 +1,44 @@
+.listsong{
+    width: 99%;
+    height: 31rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem 0.4rem;
+    transition: bottom 0.4s ease-out;
+    border-radius: 0.7rem;
+    border-style: solid;
+    border-color: hsla(36, 100%, 90%, 0.22);
+    border-width: 0.01rem;
+}
+
+.listsong ul{
+    width: 99%;
+    height: 100%;
+    overflow-y: scroll;
+    padding: 0.2rem;
+    margin: 0.2rem;
+}
+
+.row{
+    margin: 0.2rem 0.2rem;
+    background-color: transparent;
+    border-radius: 0.7rem;
+    border-style: solid;
+    border-color: hsla(36, 100%, 90%, 0.22);
+    border-width: 0.01rem;
+    padding: 0.2rem .6rem;
+    cursor: pointer;
+}
+
+.playing{
+    background-color: hsla(37, 15%, 60%, 0.22);
+    margin: 0.2rem 0.2rem;
+    border-radius: 0.7rem;
+    border-style: solid;
+    border-color: hsla(36, 100%, 90%, 0.22);
+    border-width: 0.01rem;
+    padding: 0.2rem .6rem;
+    cursor: pointer;
+}

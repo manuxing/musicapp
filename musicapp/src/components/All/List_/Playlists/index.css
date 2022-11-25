@@ -1,0 +1,37 @@
+.playlists-container{
+    position: relative;
+    display: grid;
+    width: 99%;
+    height: 80%;
+    margin: 0;
+    padding: 0.2rem;
+    border-radius: 10px;
+    border-radius: 0.7rem;
+    border-style: solid;
+    border-color: hsla(36, 100%, 90%, 0.22);
+    border-width: 0.01rem;
+    gap:1rem;
+    margin: 0rem 0rem 2rem 0rem;
+    display: flex;
+}
+
+.playlistcard{
+    width: 100%;
+    border-radius: 0.7rem;
+    padding: 0.4rem;
+    border-style: solid;
+    border-color: hsla(36, 100%, 90%, 0.22);
+    border-width: 0.01rem;
+}
+
+.addcard{
+    width: 100%;
+    border-radius: 0.7rem;
+    padding: 0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: dashed;
+    border-color: hsla(36, 100%, 90%, 0.22);
+    border-width: 0.01rem;
+}

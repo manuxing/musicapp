@@ -1,0 +1,68 @@
+.listsong-pop{
+    position: absolute;
+    width: 99%;
+    height: 38rem;
+    padding: 0rem 0.2rem;
+    background-color: hsla(0, 0%, 22%, 0.852);
+    border-radius: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.playlist-title{
+    width: 90%;
+    background-color: hsla(0, 2%, 10%, 0.896);
+    border-radius: 0.4rem;
+    height: 2rem;
+    margin: 1rem 0rem;
+    padding:  1rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playlist-title h2{
+    background-color: transparent;
+}
+
+.listsong-pop ul{
+    width: 95%;
+    height: 28rem;
+    display: flex;
+    padding: 0.2rem 0rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 0.8rem;
+    overflow-y: scroll;
+}
+
+.listsong-pop li{
+    width: 99%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.song-pop{
+    width:99%;
+    margin: 0.3rem;
+    border-radius: 0.7rem;
+    border-style: solid;
+    border-color: hsla(36, 100%, 90%, 0.22);
+    border-width: 0.01rem;
+    padding: 0.3rem 0.9rem 0.3rem 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.4rem;
+    background-color: transparent;
+}
