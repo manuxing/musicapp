@@ -1,6 +1,4 @@
-import React, {useContext, useRef} from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react';
+import React, {useContext, useEffect} from 'react'
 import { musicContext } from '../../pages/main/contexts/musicContext';
 import { timer } from '../../tools';
 import BarPlayer from './BarPlayer';
@@ -12,14 +10,25 @@ import { End, loadStart, nextPrev, Play, randomNumber, Repeat } from './playerAc
 
 function Player({props: {song, setSong}}) {
 
-  const music = useContext(musicContext);
-  const [duration, setDuration] = useState(0);
-  const [cTime, setCtime] = useState(0);
-  const [play, setPlay] = useState(false);
-  const [volume, setVolume] = useState(100);
-  const [showV, setShowV] = useState(false);
-  const [repeat, setRepeat] = useState('repeat');
-  const audio = useRef();
+  const context = useContext(musicContext);
+  const {
+    music,
+    duration,
+    setDuration,
+    cTime,
+    setCtime,
+    play,
+    setPlay,
+    volume,
+    setVolume,
+    showV,
+    setShowV,
+    repeat, 
+    setRepeat,
+    audio,
+    page,
+  } = context;
+
 
   const handleLoadStart = (e)=> {
     loadStart(e, setDuration);
@@ -61,9 +70,9 @@ function Player({props: {song, setSong}}) {
     audio.current.volume = volume / 100;
   },[volume])
 
-  useEffect(()=>{
-    if(play){ audio.current.play(); }
-  },[song, play])
+  // useEffect(()=>{
+  //   if(play){ audio.current.play(); }
+  // },[song, play, audio])
 
   const data = {
     music,
@@ -84,23 +93,30 @@ function Player({props: {song, setSong}}) {
 
   return (
     <playerContext.Provider value={data}>
-      <div className="card">
-        <DetallePlayer/>
-        <BarPlayer/>
-        {showV === true ? (
-          <Volume/>
-        ) : (
-          <></>
-        )}
-        <audio
-          src={music[song].src}
-          hidden
-          ref={audio}
-          onLoadStart={handleLoadStart}
-          onTimeUpdate={() => handleTimeUpdate()}
-          onEnded={endedAudio}
-        ></audio>
-      </div>
+      {
+        page === true ? 
+        <div className="card">
+          <DetallePlayer page={page}/>
+          <BarPlayer page={page}/>
+          {page === true && showV === true ? (
+            <Volume/>
+          ) : (
+            <></>
+          )}
+        </div>:
+           <div className="card-all">
+           <DetallePlayer page={page}/>
+           <BarPlayer page={page}/>
+         </div>
+      }
+      <audio
+            src={music[song].src}
+            hidden
+            ref={audio}
+            onLoadStart={handleLoadStart}
+            onTimeUpdate={() => handleTimeUpdate()}
+            onEnded={endedAudio}
+          ></audio>
       </playerContext.Provider>
   );
 }

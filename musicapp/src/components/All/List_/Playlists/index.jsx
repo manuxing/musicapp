@@ -20,7 +20,6 @@ function PlayLists() {
   return (
     <div className="playlists-container">
       {Object.values(data.playlists).map((p) => {
-        console.log(p)
         return (
           <div className="playlistcard" onClick={()=>handlePop(p)}>
             <p>{p.name}</p>

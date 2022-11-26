@@ -5,7 +5,7 @@ import "./index.css"
 
 function List({props:{open, setOpen, song, setSong}}) {
 
-    let music = useContext(musicContext);
+    let {music} = useContext(musicContext);
 
     function handleOpen(){
       setOpen(!open);

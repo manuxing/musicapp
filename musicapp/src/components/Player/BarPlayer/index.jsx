@@ -2,7 +2,7 @@ import React, {useContext} from 'react'
 import Button from "../../icons/More"
 import { playerContext } from '../../../pages/main/contexts/playerContext';
 
-function BarPlayer() {
+function BarPlayer({page}) {
 
   const data = useContext(playerContext);
   const {
@@ -19,6 +19,7 @@ function BarPlayer() {
   } = data;
 
   return (
+    page === true ?
     <div className="bar">
       <div className="bartop">
         <div className="timer">
@@ -38,7 +39,7 @@ function BarPlayer() {
         </div>
       </div>
       <div className="controls">
-        <div className="div" onClick={handleRepeat}>
+         <div className="div" onClick={handleRepeat}>
           <Button text={repeat} />
         </div>
         <div className="div" onClick={() => handleNextPrev(-1)}>
@@ -50,11 +51,41 @@ function BarPlayer() {
         <div className="div" onClick={() => handleNextPrev(1)}>
           <Button text={"skip_next"} id={"next"} />
         </div>
-        <div className="divz" onClick={() => setShowV((prev) => !prev)}>
-          <Button text={"volume_up"} />
-        </div>
+          <div className="divz" onClick={() => setShowV((prev) => !prev)}>
+            <Button text={"volume_up"} />
+          </div>
+      </div>
+    </div>:
+    <div className="bar-all">
+    <div className="bartop-all">
+      <div className="timer">
+        <span>{timer(cTime)}</span>
+      </div>
+      <div className="progress-all">
+        <input
+          type="range"
+          min={0}
+          max={duration}
+          value={cTime}
+          onChange={(e) => changeCurrentTime(e)}
+        />
+      </div>
+      <div>
+        <span>{timer(duration)}</span>
       </div>
     </div>
+    <div className="controls-all">
+      <div className="div" onClick={() => handleNextPrev(-1)}>
+        <Button text={"skip_previous"} id={"prev"} />
+      </div>
+      <div  onClick={handlePlay}>
+        <Button text={!play ? "play_arrow" : "pause"} />
+      </div>
+      <div className="div" onClick={() => handleNextPrev(1)}>
+        <Button text={"skip_next"} id={"next"} />
+      </div>
+    </div>
+  </div>
   );
 }
 

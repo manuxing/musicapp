@@ -1,21 +1,29 @@
 import React, {useContext} from 'react'
+import { musicContext } from '../../pages/main/contexts/musicContext';
 import { playerContext } from '../../pages/main/contexts/playerContext';
 
-function DetallePlayer() {
+function DetallePlayer({page}) {
     const data = useContext(playerContext);
+    const context = useContext(musicContext);
     const { music, song } = data;
+    const {setPage} = context;
 
   return (
+    page === true ?
     <div className="detcontainer">
       <div className="img">
         <img src={music[song].thumbnail} alt="img" />
       </div>
       <div className="details">
-        <p className="title">{music[song].title}</p>
+        <span className="title">{music[song].title}</span>
         <div className="artist">
-          <p>{music[song].artist}</p>
+          <span>{music[song].artist}</span>
         </div>
       </div>
+    </div> : 
+    <div className="detcontainer-all" onClick={()=>setPage(!page)}>
+      <span className="title-all">{music[song].title}</span>
+      <span>{music[song].artist}</span>
     </div>
   );
 }
