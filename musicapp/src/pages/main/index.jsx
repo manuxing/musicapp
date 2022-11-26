@@ -28,9 +28,11 @@ function MainPage() {
   );
   const [list, setList] = useState(data);
   const audio = useRef();
+  const init = playlists.queue.songs.length > 0 ? playlists.queue.songs : data
+
 
   const context = {
-    music:playlists.queue.songs,
+    music:init,
     duration,
     setDuration, 
     cTime,
@@ -55,7 +57,6 @@ function MainPage() {
   }
 
   useEffect(()=>{
-    console.log(play)
     if(play){ audio.current.play(); }
   },[song, play, audio])
 
