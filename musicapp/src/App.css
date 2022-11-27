@@ -17,6 +17,8 @@
 i{
   cursor: pointer;
   user-select: none;
+  background-color: transparent;
+  border-radius: 0.4rem;
 }
 
 ul{

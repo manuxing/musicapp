@@ -26,9 +26,9 @@ function PlayLists() {
           </div>
         );
       })}
-      <div className="addcard">
+      {/* <div className="addcard">
         <p>+</p>
-      </div>
+      </div> */}
       {
         pop !== false ? 
         <Playlist playList={pop} handlePop={handlePop}/>:

@@ -64,9 +64,9 @@ function MainPage() {
     <div className="container">
       <musicContext.Provider value={context}>
             <main>
-            <div className="back" onClick={()=>setPage(!page)}>
+            {page === true ? <div className="back" onClick={()=>setPage(!page)}>
               <Button text={"close"}/>
-            </div>
+            </div>:<></>}
               <Player props={{ song, setSong }} />
               {
                 page === true ?

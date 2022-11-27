@@ -3,7 +3,7 @@
     width: 99%;
     height: 38rem;
     padding: 0rem 0.2rem;
-    background-color: hsla(0, 0%, 22%, 0.852);
+    background-color: hsla(0, 1%, 42%, 0.852);
     border-radius: 0.8rem;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,6 @@
 
 .playlist-title{
     width: 90%;
-    background-color: hsla(0, 2%, 10%, 0.896);
     border-radius: 0.4rem;
     height: 2rem;
     margin: 1rem 0rem;
@@ -37,11 +36,13 @@
     align-items: center;
     border-radius: 0.8rem;
     overflow-y: scroll;
+    background-color: transparent;
 }
 
 .listsong-pop li{
     width: 99%;
     display: flex;
+    background-color: transparent;
     justify-content: flex-start;
 }
 
@@ -59,7 +60,7 @@
     align-items: center;
 }
 
-.close{
+.close-pop{
     position: absolute;
     top: 0;
     right: 0;

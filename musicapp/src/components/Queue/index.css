@@ -1,5 +1,5 @@
 .list{
-    width: 84%;
+    width: 85%;
     position: absolute;
     left: 6;
     bottom: 0;
@@ -7,7 +7,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 5rem;
+    margin-left: 6%;
     padding: 1rem 0.4rem;
     transition: bottom 0.4s ease-out;
     border-radius: 10px;
@@ -17,6 +17,27 @@
     border-color: hsla(36, 100%, 90%, 0.22);
     border-width: 0.01rem;
 }
+
+@media screen and (max-width: 920px) {
+    .list {
+      /* margin-left: 2rem; */
+      width: 83%;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .list {
+      /* margin-left: 2rem; */
+      width: 82%;
+    }
+  }
+
+@media screen and (max-width: 600px) {
+    .list {
+      /* margin-left: 2rem; */
+      width: 79%;
+    }
+  }
 
 .header{
     width: 100%;
@@ -55,4 +76,8 @@
     border-width: 0.01rem;
     padding: 0.2rem .6rem;
     cursor: pointer;
+}
+
+.playing p{
+    background-color:transparent;
 }

@@ -23,7 +23,7 @@ function DetallePlayer({page}) {
     </div> : 
     <div className="detcontainer-all" onClick={()=>setPage(!page)}>
       <span className="title-all">{music[song].title}</span>
-      <span>{music[song].artist}</span>
+      {/* <span className='art'>{music[song].artist}</span> */}
     </div>
   );
 }

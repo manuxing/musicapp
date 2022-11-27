@@ -20,7 +20,7 @@ function Playlist({playList, handlePop}) {
   return (
     playList !== false ?
     <div className={`listsong-pop`}>
-      <div className='close' onClick={handlePop}>
+      <div className='close-pop' onClick={handlePop}>
         <Button text={"close"}/>
       </div>
       <div className="playlist-title">
