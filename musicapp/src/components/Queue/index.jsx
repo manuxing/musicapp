@@ -19,15 +19,15 @@ function List({props:{open, setOpen, song, setSong}}) {
             <Button text={"expand_more"} />
           </div>
           <span>
-            Now Playing {song + 1}/{music.length}
+            Playing {song + 1}/{music.length}
           </span>
-          <Button text={"queue_music"} />
+          <div>
+          </div>
         </div>
       </div>
       {open === true ? (
         <div className={`list`}>
           <div className="header">
-            <Button text={"queue_music"} />
             <div className="div" onClick={handleOpen}>
               <Button text={"close"} />
             </div>

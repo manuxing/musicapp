@@ -10,7 +10,7 @@ function ListSongs() {
   return (
         <div className={`listsong`}>
           <ul>
-            {data.list.map((tem, i) => {
+            {data.list.map((tem) => {
               return (
                <Song song={tem}/>
               );

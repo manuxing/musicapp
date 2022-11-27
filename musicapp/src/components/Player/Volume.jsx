@@ -7,11 +7,12 @@ function Volume() {
   const data = useContext(playerContext);
     const {
         setVolume,
-        volume
+        volume,
+        showV
     } = data;
 
   return (
-    <div className="volume">
+    <div className={ showV ?"volume": "volume-off"}>
       <div onClick={() => setVolume((v) => (v > 0 ? 0 : 100))}>
         <Button text={volume > 0 ? "volume_up" : "volume_off"} />
       </div>
@@ -22,7 +23,7 @@ function Volume() {
         onChange={(e) => setVolume(parseInt(e.target.value))}
         value={volume}
       />
-      <div className="div">
+      <div>
         <span>{volume}</span>
       </div>
     </div>

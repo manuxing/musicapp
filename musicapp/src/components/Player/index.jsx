@@ -86,6 +86,7 @@ function Player({props: {song, setSong}}) {
     handleNextPrev,
     handlePlay,
     setShowV,
+    showV,
     play,
     setVolume,
     volume,
@@ -98,11 +99,7 @@ function Player({props: {song, setSong}}) {
         <div className="card">
           <DetallePlayer page={page}/>
           <BarPlayer page={page}/>
-          {page === true && showV === true ? (
             <Volume/>
-          ) : (
-            <></>
-          )}
         </div>:
            <div className="card-all">
            <DetallePlayer page={page}/>
