@@ -34,7 +34,7 @@ function BarPlayer({page}) {
             onChange={(e) => changeCurrentTime(e)}
           />
         </div>
-        <div>
+        <div className='timer'>
           <p>{timer(duration)}</p>
         </div>
       </div>

@@ -278,3 +278,13 @@ audio{
             display: none;
         }
       }
+
+      @media screen and (max-width: 600px) {
+        .progress input{
+            width: 75%;
+            margin:0.3rem
+        }
+        .timer{
+            font-size:0.6rem
+        }
+      }
