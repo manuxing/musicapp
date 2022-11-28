@@ -26,8 +26,8 @@ ____________________
 
 <br></br>
  <div>
-  <img src="./assets/cel.jpg" alt="7"  height="450" width="215"/>
-  <img src="./assets/cel2.jpg" alt="8"  height="450" width="215"/>
-  <img src="./assets/Captura de pantalla (124).png" alt="6" height="250" />
-  <img src="./assets/Captura de pantalla (125).png" alt="5" height="250" />
+  <img src="./musicapp/assets/cel.jpg" alt="7"  height="450" width="215"/>
+  <img src="./musicapp/assets/cel2.jpg" alt="8"  height="450" width="215"/>
+  <img src="./musicapp/assets/Captura de pantalla (124).png" alt="6" height="250" />
+  <img src="./musicapp/assets/Captura de pantalla (125).png" alt="5" height="250" />
 </div>
